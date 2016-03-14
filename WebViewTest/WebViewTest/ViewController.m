@@ -210,10 +210,11 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     NSURLRequest *request = webView.request;
     NSLog(@"didFailLoadWithError-url=%@--%@",[request URL],[request HTTPBody]);
+    
 }
 
 #pragma mark - searchBar代理方法
-/// 点击搜索按钮
+/// 点击搜索按钮后搜索
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     // 创建url
     NSURL *url = nil;
@@ -223,7 +224,10 @@
     if([urlStr hasPrefix:@"file://"]){
         NSRange range = [urlStr rangeOfString:@"file://"];
         NSString *fileName = [urlStr substringFromIndex:range.length];
+        // 加载Bundle里面的文件
         url = [[NSBundle mainBundle] URLForResource:fileName withExtension:nil];
+        // 如果是模拟器加载电脑上的文件，则用下面的代码
+//        url = [NSURL fileURLWithPath:fileName];
     }else if(urlStr.length>0){
         if ([urlStr hasPrefix:@"http://"]) {
             url=[NSURL URLWithString:urlStr];
@@ -263,6 +267,8 @@
         UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 20 + kSearchBarH, kScreenWidth, kScreenHeight - 20 - kSearchBarH - kBottomViewH)];
         webView.delegate = self;
 //        webView.scrollView.scrollEnabled = NO;
+        // 屏幕大小自适应
+        webView.scalesPageToFit = YES;
         _webView = webView;
     }
     return _webView;

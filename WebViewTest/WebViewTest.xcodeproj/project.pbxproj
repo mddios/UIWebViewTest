@@ -13,6 +13,7 @@
 		60FA00C61C9028E400B532E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60FA00C41C9028E400B532E9 /* Main.storyboard */; };
 		60FA00C81C9028E400B532E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60FA00C71C9028E400B532E9 /* Assets.xcassets */; };
 		60FA00CB1C9028E400B532E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60FA00C91C9028E400B532E9 /* LaunchScreen.storyboard */; };
+		60FA00FF1C96B20300B532E9 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 60FA00FE1C96B20300B532E9 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		60FA00CA1C9028E400B532E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60FA00CC1C9028E400B532E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60FA00D31C91A3A200B532E9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		60FA00FE1C96B20300B532E9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		60FA00BB1C9028E400B532E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				60FA00FE1C96B20300B532E9 /* README.md */,
 				60FA00BC1C9028E400B532E9 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -153,6 +156,7 @@
 			files = (
 				60FA00C31C9028E400B532E9 /* ViewController.m in Sources */,
 				60FA00C01C9028E400B532E9 /* AppDelegate.m in Sources */,
+				60FA00FF1C96B20300B532E9 /* README.md in Sources */,
 				60FA00BD1C9028E400B532E9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +306,7 @@
 				60FA00D11C9028E400B532E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
