@@ -10,11 +10,6 @@
 #define kSearchBarH  44
 #define kBottomViewH 44
 
-#define kisiPhone4  ([UIScreen mainScreen].bounds.size.height == 480)
-#define kisiPhone5  ([UIScreen mainScreen].bounds.size.height == 568)
-#define kisiPhone6  ([UIScreen mainScreen].bounds.size.height == 667)
-#define kisiPhone6p ([UIScreen mainScreen].bounds.size.height == 736)
-
 // 屏幕大小尺寸
 #define kScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -46,6 +41,7 @@
     [super viewDidLoad];
 //    [self simpleExampleTest];
     [self addSubViews];
+    // 刷新前进后退按钮
     [self refreshBottomButtonState];
 
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.cnblogs.com/mddblog/"]]];
@@ -204,6 +200,8 @@
         NSLog(@"isEqualToString");
     }
     NSLog(@"webViewDidFinishLoad-url=%@--%@",[request URL],[request HTTPBody]);
+    // 刷新前进后退按钮
+    [self refreshBottomButtonState];
     NSLog(@"%@",[self.webView stringByEvaluatingJavaScriptFromString:@"document.title"]);
 }
 /// 网页加载错误
