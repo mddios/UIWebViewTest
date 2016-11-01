@@ -241,6 +241,18 @@
     // 加载请求页面
     [self.webView loadRequest:request];
 }
+
+- (void)deleteNewsSource {
+    // 1.去掉页面标题
+    NSMutableString *str = [NSMutableString string];
+    // 去掉导航页
+//    [str appendString:@"document.getElementsByClassName('g-header')[0].style.display = 'none';"];
+    // 来源
+    [str appendString:@"if(document.getElementsByClassName('g-wrapper-author')[0].innerHTML.indexOf('&nbsp;') == -1){document.getElementsByClassName('g-wrapper-author')[0].innerHTML = document.getElementsByClassName('g-wrapper-author')[0].innerHTML}else{document.getElementsByClassName('g-wrapper-author')[0].innerHTML = document.getElementsByClassName('g-wrapper-author')[0].innerHTML.split('&nbsp;')[1];}"];
+    // 执行js代码
+    [_webView stringByEvaluatingJavaScriptFromString:str];
+}
+
 #pragma mark - 懒加载
 - (UIView *)bottomView {
     if (_bottomView == nil) {
